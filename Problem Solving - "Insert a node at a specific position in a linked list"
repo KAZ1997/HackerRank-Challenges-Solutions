@@ -1,0 +1,41 @@
+public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode llist, int data, int position) {
+    // Write your code here
+        SinglyLinkedListNode current = llist;  
+        SinglyLinkedListNode newList = null;    
+        SinglyLinkedListNode tail = null;       
+        int counter = 0;
+        while (current != null)
+        {
+            
+            // special case for the first new node
+            if (counter == position && newList == null)
+            {
+                newList = new SinglyLinkedListNode(data);
+                tail = newList;
+            }
+            else if (newList == null)
+            {
+                newList = new SinglyLinkedListNode(current.data);
+                tail = newList;
+                current = current.next;
+            }
+            else if (counter == position){
+                // add each node at the tail
+                tail.next = new SinglyLinkedListNode(data);
+                // advance the tail to the new last node
+                tail = tail.next;
+            }
+            else {
+                // add each node at the tail
+                tail.next = new SinglyLinkedListNode(current.data);
+ 
+                // advance the tail to the new last node
+                tail = tail.next;
+                current = current.next;
+            }
+            
+            counter++;
+        }
+ 
+        return newList;
+    }
