@@ -1,0 +1,38 @@
+class Result {
+
+    /*
+     * Complete the 'hourglassSum' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts 2D_INTEGER_ARRAY arr as parameter.
+     */
+
+    public static int hourglassSum(List<List<Integer>> arr) {
+    // Write your code here
+        int[][] sum = new int[4][4];
+        for (int i = 0 ; i < 4 ; i++){
+            for (int y = 0 ; y < 4 ; y++){
+                sum[i][y]= arr.get(i).get(y)+
+                            arr.get(i).get(y+1)+
+                            arr.get(i).get(y+2)+
+                            arr.get(i+1).get(y+1)+
+                            arr.get(i+2).get(y)+
+                            arr.get(i+2).get(y+1)+
+                            arr.get(i+2).get(y+2);
+                
+            }
+        }
+        
+        int maxHourglass= sum[0][0];
+        for (int i = 0 ; i < 4 ; i++){
+            for (int y = 0 ; y < 4 ; y++){
+                if(sum[i][y]>maxHourglass){
+                    maxHourglass=sum[i][y];
+                }
+            }
+        }
+       
+        return maxHourglass ;
+    }
+
+}
