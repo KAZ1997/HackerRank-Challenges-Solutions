@@ -1,0 +1,10 @@
+public static int getNode(SinglyLinkedListNode llist, int positionFromTail) {
+    // Write your code here
+    ArrayList <Integer> x = new ArrayList<>();
+    while ((llist != null)) {
+            x.add(llist.data);
+           llist = llist.next;
+       }
+       Collections.reverse(x);
+       return x.get(positionFromTail);
+    }
