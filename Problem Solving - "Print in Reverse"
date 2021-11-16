@@ -1,0 +1,12 @@
+public static void reversePrint(SinglyLinkedListNode llist) {
+    // Write your code here
+        ArrayList<Integer> x = new ArrayList();
+        while ((llist != null)) {
+            x.add(llist.data);
+           llist = llist.next;
+           
+       }
+       Collections.reverse(x);
+       for(int i = 0 ; i < x.size(); i++)
+       System.out.println(x.get(i));
+    }
