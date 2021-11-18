@@ -1,0 +1,12 @@
+if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+    myList = list(arr)
+        
+    firstMax = max(myList) 
+    secondMax = -100
+    for x in myList:
+        if x > secondMax and x != firstMax:
+            secondMax = x
+    
+    print(secondMax)
